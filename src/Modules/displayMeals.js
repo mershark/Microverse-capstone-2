@@ -1,5 +1,6 @@
+import { mealCounter } from './counter.js';
 import getMealList from './getMeals.js';
-import mealCounter from './counter.js';
+import { displayPopup } from './popup.js';
 
 const MEAL_TEMPLATE = `
 <div class="meal-thumbnail">
@@ -14,7 +15,6 @@ const MEAL_TEMPLATE = `
   <button class="meal-comment">Comments</button>
 </div>`;
 
-/* eslint-disable linebreak-style */
 const displayMeal = async () => {
   const meals = await getMealList();
   const Container = document.querySelector('#meals');
@@ -24,7 +24,7 @@ const displayMeal = async () => {
     const thumbnail = card.querySelector('.meal-thumbnail img');
     const dish = card.querySelector('.meal-name');
     const likes = card.querySelector('.like-count');
-    // const likeButton = card.querySelector('.likeButton');
+    // const likeButton = card.querySelector('.likeButton')
 
     dish.textContent = meal.strMeal;
     thumbnail.src = meal.strMealThumb;
@@ -34,6 +34,10 @@ const displayMeal = async () => {
     card.id = meal.idMeal;
 
     Container.appendChild(card);
+    const commentButton = card.querySelector('.meal-comment');
+    commentButton.addEventListener('click', async () => {
+      displayPopup(card.id);
+    });
   });
   await mealCounter(meals);
 };
