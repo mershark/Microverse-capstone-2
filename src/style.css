@@ -40,3 +40,17 @@ body {
   cursor: pointer;
   color: black;
 }
+
+/* Footer */
+footer {
+  background-color: white;
+  padding: 20px;
+  text-align: left;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+footer p {
+  margin: 0;
+}
+
