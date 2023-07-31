@@ -1,7 +1,6 @@
-import _ from 'lodash';
 import './style.css';
-import Navbar from './Modules/Images';
-import displayMeal from './Modules/displayMeals'
+import Navbar from './Modules/Images.js';
+import displayMeal from './Modules/displayMeals.js';
 
-Navbar()
-displayMeal()
+Navbar();
+displayMeal();
