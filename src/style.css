@@ -180,6 +180,6 @@ footer p {
 
 .form-submit {
   width: fit-content;
-  font: large;
+  font-size: large;
   font-weight: 600;
 }
