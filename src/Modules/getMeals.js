@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { MEAL_DB_URL } from "./API-Data";
 
 const getMealList = async () => {

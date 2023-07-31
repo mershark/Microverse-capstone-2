@@ -14,6 +14,7 @@ const MEAL_TEMPLATE = `
   <button class="meal-comment">Comments</button>
 </div>`
 
+/* eslint-disable linebreak-style */
 const displayMeal = async ()=> {
   const meals = await getMealList()
   const Container = document.querySelector('#meals')
