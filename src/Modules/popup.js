@@ -48,7 +48,7 @@ const getItemDetails = async (id) => {
   return data
 }
 
-const populatePopup = async (id, popUp) => {
+const populatPopup = async (id, popUp, purpose) => {
   const itemDetails = await getItemDetails(id)
   const thumbnail = popUp.querySelector('#popup-thumb')
   const mealName = popUp.querySelector('#popup-name')
@@ -65,21 +65,27 @@ const populatePopup = async (id, popUp) => {
   mealRecipe.href = strYoutube
   mealRecipe.target = '_blank'
 
-  const comments = await populaeCommentsSection(id)
-  const commentArea = popUp.querySelector('#popup-responses')
-  const header1 = commentArea.querySelector('.header h2')
-  if (comments){
-    header1.textContent = `Comments (${comments.length})`
-    comments.forEach(comment => commentArea.appendChild(comment))
+  // Conditional for purpose, comments or reservation
+  if (purpose === "Comments") {
+    const comments = await populaeCommentsSection(id)
+    const commentArea = popUp.querySelector('#popup-responses')
+    const header1 = commentArea.querySelector('.header h2')
+    if (comments){
+      header1.textContent = `Comments (${comments.length})`
+      comments.forEach(comment => commentArea.appendChild(comment))
+    }
+    else {
+      header1.textContent = `Comments (0)`
+    }
+    const addComments = popUp.querySelector('#popup-add-response')
+    const header2 = addComments.querySelector('.header h2')
+    const form = createCommentForm(id)
+    addComments.appendChild(form)
+    header2.textContent = 'Add a comment'
   }
   else {
-    header1.textContent = `Comments (0)`
+    // Make the code for the reservation section here
   }
-  const addComments = popUp.querySelector('#popup-add-response')
-  const header2 = addComments.querySelector('.header h2')
-  const form = createCommentForm(id)
-  addComments.appendChild(form)
-  header2.textContent = 'Add a comment'
 }
 
 const createCommentForm = (id)=> {
@@ -162,7 +168,7 @@ const closePopup = () => {
 
 const displayPopup = async (id) => {
   const popUp = createPopUp()
-  await populatePopup(id, popUp)
+  await populatPopup(id, popUp, 'Comments')
   const closePopUp = popUp.querySelector('#popup-close')
   closePopUp.addEventListener('click', closePopup)
   document.body.appendChild(popUp)

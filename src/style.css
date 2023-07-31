@@ -102,3 +102,84 @@ footer p {
 .like-count {
   margin-left: auto;
 }
+
+#popup {
+  overflow-y: auto;
+  position: fixed;
+  background-color: blanchedalmond;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#popup-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: larger;
+  font-weight: 600;
+}
+
+#popup-thumbnail {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#popup-close {
+  font-size: xx-large;
+}
+
+#popup-thumb {
+  width: 40%;
+  margin: 0 auto;
+}
+
+#popup-desc {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 50px;
+  width: 100%;
+  padding: 0 20%;
+}
+
+#popup-desc div {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
+
+#popup-responses {
+  width: 100%;
+  padding: 0 20%;
+}
+
+.header {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+#popup-add-response {
+  width: 100%;
+  padding: 0 20%;
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 50%;
+}
+
+.form-submit {
+  width: fit-content;
+  font: large;
+  font-weight: 600;
+}
