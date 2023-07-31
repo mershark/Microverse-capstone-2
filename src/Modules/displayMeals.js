@@ -1,4 +1,4 @@
-import mealCounter from "./counter"
+import {mealCounter} from "./counter"
 import getMealList from "./getMeals"
 import { displayPopup } from "./popup"
 

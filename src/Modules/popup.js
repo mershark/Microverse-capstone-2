@@ -1,4 +1,5 @@
 import { getComments, postComment } from "./comments"
+import { commentsCounter } from "./counter"
 
 const POPUP_TEMPLATE = `
 <div id="popup-header">
@@ -65,27 +66,20 @@ const populatPopup = async (id, popUp, purpose) => {
   mealRecipe.href = strYoutube
   mealRecipe.target = '_blank'
 
-  // Conditional for purpose, comments or reservation
-  if (purpose === "Comments") {
-    const comments = await populaeCommentsSection(id)
-    const commentArea = popUp.querySelector('#popup-responses')
-    const header1 = commentArea.querySelector('.header h2')
-    if (comments){
-      header1.textContent = `Comments (${comments.length})`
-      comments.forEach(comment => commentArea.appendChild(comment))
-    }
-    else {
-      header1.textContent = `Comments (0)`
-    }
-    const addComments = popUp.querySelector('#popup-add-response')
-    const header2 = addComments.querySelector('.header h2')
-    const form = createCommentForm(id)
-    addComments.appendChild(form)
-    header2.textContent = 'Add a comment'
+  const comments = await populaeCommentsSection(id)
+  const commentArea = popUp.querySelector('#popup-responses')
+  const header1 = commentArea.querySelector('.header h2')
+  
+  if (comments){
+    comments.forEach(comment => commentArea.appendChild(comment))
   }
-  else {
-    // Make the code for the reservation section here
-  }
+
+  commentsCounter(comments, header1)
+  const addComments = popUp.querySelector('#popup-add-response')
+  const header2 = addComments.querySelector('.header h2')
+  const form = createCommentForm(id)
+  addComments.appendChild(form)
+  header2.textContent = 'Add a comment'
 }
 
 const createCommentForm = (id)=> {
