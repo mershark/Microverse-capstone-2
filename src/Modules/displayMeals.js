@@ -1,4 +1,5 @@
 import getMealList from "./getMeals"
+import { mealCounter } from "./counter"
 
 const MEAL_TEMPLATE = `
 <div class="meal-thumbnail">
