@@ -24,7 +24,7 @@ const displayMeal = async () => {
     const thumbnail = card.querySelector('.meal-thumbnail img');
     const dish = card.querySelector('.meal-name');
     const likes = card.querySelector('.like-count');
-    const likeButton = card.querySelector('.likeButton');
+    // const likeButton = card.querySelector('.likeButton');
 
     dish.textContent = meal.strMeal;
     thumbnail.src = meal.strMealThumb;
