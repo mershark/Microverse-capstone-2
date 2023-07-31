@@ -1,7 +1,9 @@
-import logo from '../assets/brand-logo.png'
-const Navbar = () => {
-  const img = document.querySelector('#logo')
-  img.src = logo
-}
+/* eslint-disable linebreak-style */
+import logo from '../assets/brand-logo.png';
 
-export default Navbar
+const Navbar = () => {
+  const img = document.querySelector('#logo');
+  img.src = logo;
+};
+
+export default Navbar;
