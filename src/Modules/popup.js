@@ -1,5 +1,5 @@
 import { getComments, postComment } from './comments.js';
-import { commentsCounter } from './counter.js';
+import commentsCounter from './commentsCounter.js';
 
 const POPUP_TEMPLATE = `
 <div id="popup-header">
