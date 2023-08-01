@@ -1,4 +1,4 @@
-import mealCounter  from './mealCounter.js';
+import mealCounter from './mealCounter.js';
 import getMealList from './getMeals.js';
 import { displayPopup } from './popup.js';
 import {

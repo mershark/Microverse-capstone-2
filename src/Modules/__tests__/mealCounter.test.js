@@ -1,7 +1,7 @@
-import mealCounter from "../mealCounter";
+import mealCounter from '../mealCounter.js';
 
 describe('Meals Counter', () => {
-  beforeEach(()=> {
+  beforeEach(() => {
     document.body.innerHTML = `
     <nav id="Navbar">
       <div id="brand">
@@ -14,9 +14,8 @@ describe('Meals Counter', () => {
       </ul>
     </nav>
     `;
-  })
+  });
   test('Update Header to have the correct Count of Items', () => {
-
     // Parameters for the commentsCounter Function
     const arr = [
       {
@@ -41,11 +40,10 @@ describe('Meals Counter', () => {
   });
 
   test('Update Header to have the 0 items if the items are not fetched correctly', () => {
-
     // Parameters for the mealCounter function
-    const arr1 = 'Not array'
-    const arr2 = undefined
-    const arr3 = null
+    const arr1 = 'Not array';
+    const arr2 = undefined;
+    const arr3 = null;
 
     const nav = document.querySelector('#nav-dishes');
 
