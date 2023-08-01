@@ -4,23 +4,43 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "webpack serve --open",
     "build": "webpack"
   },
+
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "^src/(.*)$": "<rootDir>/src/$1"
+    }
+  },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "css-loader": "^6.8.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.28.0",
     "html-webpack-plugin": "^5.5.3",
+    "jsdom": "^22.1.0",
+    "jest-environment-jsdom": "^29.6.1",
     "style-loader": "^3.3.3",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
     "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
     "jest": "^29.6.2",
+    "@babel/preset-env": "^7.22.9",
+    "babel-jest": "^29.6.1",
     "lodash": "^4.17.20"
   }
 }

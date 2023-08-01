@@ -1,3 +1,199 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
 body {
+  margin: 0;
+  padding: 0;
+}
+
+button,
+i {
+  cursor: pointer;
+}
+
+#Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2% 5% 0 5%;
+}
+
+#brand {
+  padding: 0;
+}
+
+#logo {
+  width: 80px;
+}
+
+#nav-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 5%;
+  width: 100%;
+  justify-content: center;
+  font-size: 1.7vw;
+  margin: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+/* Footer */
+footer {
   background-color: white;
+  padding: 20px;
+  text-align: left;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+footer p {
+  margin: 0;
+}
+
+#meals {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5%;
+  justify-content: space-between;
+}
+
+.meal-card {
+  width: 30%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.meal-thumbnail,
+.meal-thumbnail img {
+  width: 100%;
+}
+
+.meal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.likeButton {
+  color: cornflowerblue;
+  cursor: pointer;
+}
+
+.meal-description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.meal-name {
+  margin: 0;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.like-count {
+  margin-left: auto;
+}
+
+#popup {
+  overflow-y: auto;
+  position: fixed;
+  background-color: blanchedalmond;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#popup-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: larger;
+  font-weight: 600;
+}
+
+#popup-thumbnail {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#popup-close {
+  font-size: xx-large;
+}
+
+#popup-thumb {
+  width: 40%;
+  margin: 0 auto;
+}
+
+#popup-desc {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 50px;
+  width: 100%;
+  padding: 0 20%;
+}
+
+#popup-desc div {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
+
+#popup-responses {
+  width: 100%;
+  padding: 0 20%;
+}
+
+.header {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+#popup-add-response {
+  width: 100%;
+  padding: 0 20%;
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 50%;
+}
+
+.form-submit {
+  width: fit-content;
+  font-size: large;
+  font-weight: 600;
+}
+
+.meal-comment {
+  padding: 8px;
+  font-size: large;
+  border: solid 1px;
+  font-weight: 600;
 }
