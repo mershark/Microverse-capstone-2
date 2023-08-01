@@ -83,9 +83,7 @@ describe('Comments Counter', () => {
 });
 
 describe('Meals Counter', () => {
-
   test('Update Header to have the correct Count of Items', () => {
-
     document.body.innerHTML = `
     <nav id="Navbar">
       <div id="brand">
@@ -102,23 +100,23 @@ describe('Meals Counter', () => {
     // Parameters for the commentsCounter Function
     const arr = [
       {
-        obj: 'obj1'
+        obj: 'obj1',
       },
       {
-        obj: 'obj2'
+        obj: 'obj2',
       },
       {
-        obj: 'obj3'
-      }
-    ]
+        obj: 'obj3',
+      },
+    ];
 
     const nav = document.querySelector('#nav-dishes');
 
     // call the comments Counter Function to count the items in the array and update the header
 
-    mealCounter(arr)
+    mealCounter(arr);
 
     // Check if the header textContent is updated correctly
     expect(nav.textContent).toBe('Dishes (3)');
   });
-})
+});
