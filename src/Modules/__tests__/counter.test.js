@@ -1,4 +1,4 @@
-import { commentsCounter } from '../counter.js';
+import { commentsCounter, mealCounter } from '../counter.js';
 
 describe('Comments Counter', () => {
   beforeEach(() => {
@@ -81,3 +81,44 @@ describe('Comments Counter', () => {
     expect(header.textContent).toBe('Comments (0)');
   });
 });
+
+describe('Meals Counter', () => {
+
+  test('Update Header to have the correct Count of Items', () => {
+
+    document.body.innerHTML = `
+    <nav id="Navbar">
+      <div id="brand">
+        <img src="" alt="logo" id="logo">
+      </div>
+      <ul id="nav-list">
+        <li class="nav"><a href="#" id="nav-dishes">Dishes</a></li>
+        <li class="nav"><a href="#">Page2</a></li>
+        <li class="nav"><a href="#">Page3</a></li>
+      </ul>
+    </nav>
+    `;
+
+    // Parameters for the commentsCounter Function
+    const arr = [
+      {
+        obj: 'obj1'
+      },
+      {
+        obj: 'obj2'
+      },
+      {
+        obj: 'obj3'
+      }
+    ]
+
+    const nav = document.querySelector('#nav-dishes');
+
+    // call the comments Counter Function to count the items in the array and update the header
+
+    mealCounter(arr)
+
+    // Check if the header textContent is updated correctly
+    expect(nav.textContent).toBe('Dishes (3)');
+  });
+})
