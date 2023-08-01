@@ -8,7 +8,8 @@ body {
   padding: 0;
 }
 
-button, i {
+button,
+i {
   cursor: pointer;
 }
 
