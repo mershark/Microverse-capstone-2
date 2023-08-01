@@ -8,6 +8,11 @@ body {
   padding: 0;
 }
 
+button,
+i {
+  cursor: pointer;
+}
+
 #Navbar {
   display: flex;
   justify-content: space-between;
@@ -97,6 +102,8 @@ footer p {
 
 .meal-name {
   margin: 0;
+  font-size: larger;
+  font-weight: 600;
 }
 
 .like-count {
@@ -181,5 +188,12 @@ footer p {
 .form-submit {
   width: fit-content;
   font-size: large;
+  font-weight: 600;
+}
+
+.meal-comment {
+  padding: 8px;
+  font-size: large;
+  border: solid 1px;
   font-weight: 600;
 }
