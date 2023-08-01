@@ -1,8 +1,7 @@
-import { commentsCounter } from "../counter.js";
+import { commentsCounter } from '../counter.js';
 
 describe('Comments Counter', () => {
-
-  beforeEach(()=> {
+  beforeEach(() => {
     document.body.innerHTML = `
     <div id="popup-header">
     <div id="popup-thumbnail">
@@ -37,51 +36,48 @@ describe('Comments Counter', () => {
       </div>
     </div>
     `;
-  })
+  });
 
   test('Update Header to have the correct Count of Items', () => {
     // Parameters for the commentsCounter Function
     const arr = [
       {
-        obj: 'obj1'
+        obj: 'obj1',
       },
       {
-        obj: 'obj2'
+        obj: 'obj2',
       },
       {
-        obj: 'obj3'
-      }
-    ]
+        obj: 'obj3',
+      },
+    ];
 
-    const header = document.querySelector('#popup-responses .header h2')
+    const header = document.querySelector('#popup-responses .header h2');
 
     // call the comments Counter Function to count the items in the array and update the header
 
-    commentsCounter(arr, header)
+    commentsCounter(arr, header);
 
     // Check if the header textContent is updated correctly
     expect(header.textContent).toBe('Comments (3)');
   });
 
-  test('Put Comments (0) if the array provided is not an array e.g. Undefined or Null', ()=> {
-
+  test('Put Comments (0) if the array provided is not an array e.g. Undefined or Null', () => {
     // Create the Params
-    const arr1 = 'Not an array'
-    const arr2 = null
-    const arr3 = undefined
-    const header = document.querySelector('#popup-responses .header h2')
+    const arr1 = 'Not an array';
+    const arr2 = null;
+    const arr3 = undefined;
+    const header = document.querySelector('#popup-responses .header h2');
 
-    //Call the function with each array parameter
+    // Call the function with each array parameter
 
-    commentsCounter(arr1, header)
-    expect(header.textContent).toBe('Comments (0)')
+    commentsCounter(arr1, header);
+    expect(header.textContent).toBe('Comments (0)');
 
-    commentsCounter(arr2, header)
-    expect(header.textContent).toBe('Comments (0)')
+    commentsCounter(arr2, header);
+    expect(header.textContent).toBe('Comments (0)');
 
-    commentsCounter(arr3, header)
-    expect(header.textContent).toBe('Comments (0)')
-
-  })
-
-})
+    commentsCounter(arr3, header);
+    expect(header.textContent).toBe('Comments (0)');
+  });
+});
