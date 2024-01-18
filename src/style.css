@@ -1,9 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
-}
-
-body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -18,7 +15,7 @@ i {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 2% 5% 0 5%;
+  padding: 20px;
 }
 
 #brand {
@@ -33,26 +30,30 @@ i {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
-  gap: 5%;
+  gap: 20px;
   width: 100%;
   justify-content: center;
-  font-size: 1.7vw;
-  margin: 0;
+  font-size: 1.2rem;
 }
 
 .nav a {
   text-decoration: none;
   cursor: pointer;
-  color: black;
+  color: #333;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav a:hover {
+  color: #555;
 }
 
 /* Footer */
 footer {
-  background-color: white;
+  background-color: #f9f9f9;
   padding: 20px;
   text-align: left;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 footer p {
@@ -73,23 +74,35 @@ footer p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Smooth transform transition */
+}
+
+.meal-card:hover {
+  transform: translateY(-5px);
 }
 
 .meal-thumbnail,
 .meal-thumbnail img {
   width: 100%;
+  height: 200px; /* Fixed height for consistency */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 12px 12px 0 0;
 }
 
 .meal-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7px;
+  gap: 10px;
+  padding: 20px;
 }
 
 .likeButton {
-  color: cornflowerblue;
-  cursor: pointer;
+  color: #3498db;
 }
 
 .meal-description {
@@ -97,12 +110,11 @@ footer p {
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  padding: 0 10px;
 }
 
 .meal-name {
   margin: 0;
-  font-size: larger;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
@@ -110,10 +122,11 @@ footer p {
   margin-left: auto;
 }
 
+/* Popup */
 #popup {
   overflow-y: auto;
   position: fixed;
-  background-color: blanchedalmond;
+  background-color: #fff8e1;
   top: 10%;
   left: 10%;
   right: 10%;
@@ -122,6 +135,8 @@ footer p {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
 }
 
 #popup-header {
@@ -129,8 +144,8 @@ footer p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: larger;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
 #popup-thumbnail {
@@ -140,7 +155,14 @@ footer p {
 }
 
 #popup-close {
-  font-size: xx-large;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #777;
+  transition: color 0.3s ease;
+}
+
+#popup-close:hover {
+  color: #555;
 }
 
 #popup-thumb {
@@ -150,10 +172,10 @@ footer p {
 
 #popup-desc {
   display: grid;
-  grid-template-columns: auto auto;
-  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   width: 100%;
-  padding: 0 20%;
+  padding: 0 10%;
 }
 
 #popup-desc div {
@@ -164,7 +186,7 @@ footer p {
 
 #popup-responses {
   width: 100%;
-  padding: 0 20%;
+  padding: 0 10%;
 }
 
 .header {
@@ -175,25 +197,37 @@ footer p {
 
 #popup-add-response {
   width: 100%;
-  padding: 0 20%;
+  padding: 0 10%;
 }
 
 .popup-form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
   width: 50%;
 }
 
 .form-submit {
   width: fit-content;
-  font-size: large;
+  font-size: 1.2rem;
   font-weight: 600;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+  background-color: #2575b2;
 }
 
 .meal-comment {
-  padding: 8px;
-  font-size: large;
-  border: solid 1px;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
   font-weight: 600;
 }
